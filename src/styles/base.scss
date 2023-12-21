@@ -1,4 +1,4 @@
-@import './variables.scss';
+@use './variables.scss';
 
 * {
     margin: 0;
@@ -6,6 +6,18 @@
     box-sizing: border-box;
 }
 
+@font-face {
+    font-family: Avenir;
+    src: url(../assets/fonts/Avenir-Regular.woff2);
+    font-weight: 400;
+}
+@font-face {
+    font-family: Avenir;
+    src: url(../assets/fonts/Avenir-Bold.woff2);
+    font-weight: 700;
+}
+
 body {
-    background-color: $bgColor;
+    background-color: variables.$bgColor;
+    font-family: Avenir, sans-serif;
 }

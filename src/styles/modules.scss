@@ -1,13 +1,13 @@
-@import './variables.scss';
+@use './variables.scss';
 
 @mixin text($fontSize: 16px) {
     font-size: $fontSize;
     line-height: $fontSize + 10px;
-    color: $mainTextColor
+    color: variables.$mainTextColor
 }
 @mixin title($fontSize: 28px) {
     @include text($fontSize);
-    color: $secondaryTextColor;
+    color: variables.$secondaryTextColor;
 }
 
 .text {
@@ -33,6 +33,6 @@
 
 .link-text {
     @include text(18px);
-    color: $secondaryTextColor;
+    color: variables.$secondaryTextColor;
     text-decoration: underline;
 }
