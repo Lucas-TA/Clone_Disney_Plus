@@ -1,0 +1,38 @@
+@import './variables.scss';
+
+@mixin text($fontSize: 16px) {
+    font-size: $fontSize;
+    line-height: $fontSize + 10px;
+    color: $mainTextColor
+}
+@mixin title($fontSize: 28px) {
+    @include text($fontSize);
+    color: $secondaryTextColor;
+}
+
+.text {
+    @include text;
+
+    &--big {
+        @include text(18px);
+    }
+    &--small {
+        @include text(12px);
+    }
+}
+.title {
+    @include title(40px);
+    
+    &--big {
+        @include title(44px)
+    }
+    &--small {
+        @include title;
+    }
+}
+
+.link-text {
+    @include text(18px);
+    color: $secondaryTextColor;
+    text-decoration: underline;
+}

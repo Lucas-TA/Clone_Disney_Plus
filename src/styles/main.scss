@@ -1,5 +1,4 @@
-$bgColor: rgb(167, 0, 153);
-
-body {
-    background-color: $bgColor;
-}
+@use './base.scss';
+@use './variables.scss';
+@use './modules.scss';
+@use './hero';
