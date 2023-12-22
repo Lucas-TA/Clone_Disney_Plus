@@ -4,6 +4,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    font-family: Avenir, sans-serif;
 }
 
 @font-face {
@@ -19,5 +20,4 @@
 
 body {
     background-color: variables.$bgColor;
-    font-family: Avenir, sans-serif;
 }
