@@ -13,21 +13,45 @@
 .text {
     @include text;
 
+    @media (max-width: 768px) {
+        @include text(14px)
+    }
+
     &--big {
         @include text(18px);
+
+        @media (max-width: 768px) {
+            @include text(15px)
+        }
     }
     &--small {
         @include text(12px);
+
+        @media (max-width: 768px) {
+            @include text(11px)
+        }
     }
 }
 .title {
     @include title(40px);
+
+    @media (max-width: 768px) {
+        @include title(24px)
+    }
     
     &--big {
-        @include title(44px)
+        @include title(44px);
+
+        @media (max-width: 768px) {
+            @include title(26px)
+        }
     }
     &--small {
         @include title;
+
+        @media (max-width: 768px) {
+            @include title(22px)
+        }
     }
 }
 
@@ -37,18 +61,45 @@
     text-decoration: underline;
 }
 .button {
-    display: block;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     width: 100%;
     height: 60px;
     font-size: 18px;
     color: variables.$secondaryTextColor;
-    background-color: #6421ff;
+    background-color: variables.$primaryButtonBgColor;
     text-transform: uppercase;
     border-radius: 4px;
     border: none;
-    margin-top: 2vw;
-    margin-bottom: 8px;
     cursor: pointer;
+    text-decoration: none;
+    padding: 8px 14px;
+    letter-spacing: 1px;
+    border: 1px solid variables.$primaryButtonBgColor;
+
+    &:hover {
+        background-color: lighten(variables.$primaryButtonBgColor, 3%)
+    }
+
+    &--secondary {
+        background-color: variables.$secondaryButtonBgColor;
+        border-color: variables.$secondaryButtonBgColor;
+
+        &:hover {
+            background-color: lighten(variables.$secondaryButtonBgColor, 3%)
+        }
+    }
+
+    &--dark {
+        background-color: rgba(variables.$darkButtonBgColor, 0.8);
+        border-color: variables.$secondaryTextColor;
+
+        &:hover {
+            background-color: variables.$secondaryTextColor;
+            color: variables.$bgColor;
+        }
+    }
 }
 
 .image-text-section {
@@ -57,6 +108,10 @@
     grid-template-columns: 1fr 1fr;
     align-items: center;
     gap: 2vw;
+
+    @media (max-width: 768px) {
+        display: block;
+    }
 
     &__text_container {
         h2 {
@@ -84,6 +139,12 @@
             display: flex;
             flex-direction: column;
             justify-content: center;
+
+            @media (max-width: 768px) {
+                position: relative;
+                left: 0;
+                width: 100%;
+            }
         }
     }
 }
